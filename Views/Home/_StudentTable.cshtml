@@ -14,8 +14,7 @@
         {
             <tr>
                 @{
-                    List<Course> notEnrolled = Model.AllCourses.Where(c => c.StudentEnrollments.All(e => e.StudentId !=
-                s.StudentId)).ToList();
+                    List<Course> notEnrolled = Model.AllCourses.Where(c => c.StudentEnrollments.All(e => e.StudentId !=s.StudentId)).ToList();
                 }
                 <td>@s.StudentId</td>
                 <td>

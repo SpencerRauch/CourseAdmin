@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "v8SASjC0d1Oj2Sb1OkGeLyqXhL2mBNrK7To7Wkl8n8JbVIX09EYb3IesH4MN5ohfguSolKZP5ZXNe3Uek/IBow==",
+  "dgSpecHash": "brEplmxy5hzHyco9WpXhlHJMMKRkS0rOq9fVQ05p0bzKXQ9AIOYpuxpJbtU12FKXY1W3nQJ+KH2WBzzLhnvpCg==",
   "success": true,
-  "projectFilePath": "C:\\stacks\\CSharp\\CourseAdmin\\CourseAdmin.csproj",
+  "projectFilePath": "c:\\stacks\\CSharp\\CourseAdmin\\CourseAdmin.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bizar\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\bizar\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.3\\microsoft.entityframeworkcore.6.0.3.nupkg.sha512",
