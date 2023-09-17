@@ -1,0 +1,16 @@
+@model ViewCourseForm
+
+<form asp-action="CreateCourse" 
+    asp-controller="Home" 
+    method="Post" 
+    class="d-flex align-items-center gap-3 justify-content-center">
+    <label asp-for="SubjectId">Subject:</label>
+    <select asp-for="SubjectId">
+        @foreach (Subject s in Model.AllSubjects)
+        {
+            <option value="@s.SubjectId">@s.SubjectName</option>
+        }
+    </select>
+    <span class="text-danger" asp-validation-for="SubjectId"></span>
+    <button class="btn btn-primary">Submit</button>
+</form>

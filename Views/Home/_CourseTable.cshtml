@@ -1,0 +1,28 @@
+@model List<Course>
+<table class="table-striped table">
+    <thead>
+        <tr>
+            <th>Course ID</th>
+            <th>Subject</th>
+            <th>Enrolled</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Course c in Model)
+        {
+        <tr>
+            <td>@c.CourseId</td>
+            <td>@c.Subject?.SubjectName</td>
+            <td>
+                <form 
+                    asp-action="SelectCourse" 
+                    asp-controller="Home"
+                    asp-route-courseID="@c.CourseId" 
+                    method="Post">
+                    <button class="btn btn-link">@c.StudentEnrollments.Count</button>
+                </form>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,11 @@
+@model Subject
+
+<form asp-action="CreateSubject" 
+    asp-controller="Home" 
+    method="Post" 
+    class="d-flex align-items-center gap-3 justify-content-center">
+    <label asp-for="SubjectName">Name:</label>
+    <input asp-for="SubjectName">
+    <span class="text-danger" asp-validation-for="SubjectName"></span>
+    <button class="btn btn-primary">Submit</button>
+</form>
