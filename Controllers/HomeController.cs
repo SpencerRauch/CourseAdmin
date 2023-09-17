@@ -25,6 +25,8 @@ public class HomeController : Controller
             AllStudents = _context.Students.Include(s => s.CourseEnrollments).ThenInclude(e => e.CourseEnrolled).ToList(),
             AllSubjects = _context.Subjects.ToList()
         };
+        //explicit with View name because we will rerun this method to render this view with model errors
+        // in CreateStudent and CreateSubject without having to reform viewModel in those routes
         return View("Index", viewModel);
     }
 
