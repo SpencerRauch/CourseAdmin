@@ -53,13 +53,14 @@ public class HomeController : Controller
 
     public IActionResult CreateCourse(ViewCourseForm courseForm)
     {
-        if (!ModelState.IsValid)
-        {
-            var message = string.Join(" | ", ModelState.Values
-                .SelectMany(v => v.Errors)
-                .Select(e => e.ErrorMessage));
-            Console.WriteLine(message);
-        }
+        // this commented out code is useful for seeing what validation is failing
+        // if (!ModelState.IsValid)
+        // {
+        //     var message = string.Join(" | ", ModelState.Values
+        //         .SelectMany(v => v.Errors)
+        //         .Select(e => e.ErrorMessage));
+        //     Console.WriteLine(message);
+        // }
         if (!ModelState.IsValid)
         {
             return Index();
