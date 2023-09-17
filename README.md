@@ -1,2 +1,3 @@
 # CourseAdmin
-![alt text](Course_Admin_Panel.png "Title")
+![wireframe](Course_Admin_Panel.png "Wireframe")
+![erd](ERD.png "ERD")
