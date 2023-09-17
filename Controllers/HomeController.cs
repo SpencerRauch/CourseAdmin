@@ -142,8 +142,9 @@ public class HomeController : Controller
     [HttpPost("courses/{courseID}/select")]
     public RedirectToActionResult SelectCourse(int courseID)
     {
-        Course? potentialCourse = _context.Courses.FirstOrDefault(c => c.CourseId == courseID);
-        if (potentialCourse != null)
+        //alternate way to check existence
+        bool courseExists = _context.Courses.Any(c=>c.CourseId==courseID);
+        if (courseExists)
         {
             HttpContext.Session.SetInt32("SelectedCourse", courseID);
         }
