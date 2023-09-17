@@ -117,7 +117,7 @@ public class HomeController : Controller
         return RedirectToAction("Index");
     }
 
-
+    //sets selected studentID into session after confirming existence of student
     [HttpPost("students/{studentID}/select")]
     public RedirectToActionResult SelectStudent(int studentID)
     {
@@ -129,13 +129,14 @@ public class HomeController : Controller
         return RedirectToAction("Index");
     }
 
+    //removes student selection
     public RedirectToActionResult ClearStudentSelection()
     {
         HttpContext.Session.Remove("SelectedStudent");
         return RedirectToAction("Index");
     }
 
-    
+    //sets selected courseID into session after confirming existence of course
     [HttpPost("courses/{courseID}/select")]
     public RedirectToActionResult SelectCourse(int courseID)
     {
@@ -147,6 +148,7 @@ public class HomeController : Controller
         return RedirectToAction("Index");
     }
 
+    //removes course selection
     public RedirectToActionResult ClearCourseSelection()
     {
         HttpContext.Session.Remove("SelectedCourse");
