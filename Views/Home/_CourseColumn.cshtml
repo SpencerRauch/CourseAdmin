@@ -17,15 +17,15 @@
 else
 {
     <h2 class="mt-5">Course @SelectedCourse.CourseId - @SelectedCourse.Subject.SubjectName</h2>
+    <form asp-action="ClearCourseSelection" asp-controller="Home" method="Post">
+        <button class="btn btn-link">All Courses</button>
+    </form>
     @if (SelectedCourse.StudentEnrollments.Count == 0)
     {
         <p>No enrollments</p>
     }
     else
     {
-        <form asp-action="ClearCourseSelection" asp-controller="Home" method="Post">
-            <button class="btn btn-link">All Courses</button>
-        </form>
         <table class="table table-striped">
             <thead>
                 <tr>
