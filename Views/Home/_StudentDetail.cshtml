@@ -10,6 +10,13 @@ else
         <button class="btn btn-link">Reset Student Selection</button>
     </form>
     <h4>@Model.Name</h4>
+    @if(Model.CourseEnrollments.Count == 0)
+    {
+        <p>@Model.Name isn't signed up for anything</p>
+    }
+    else
+    {
+
     <table class="table table-striped">
         <thead>
             <tr>
@@ -38,4 +45,5 @@ else
             }
         </tbody>
     </table>
+    }
 }
