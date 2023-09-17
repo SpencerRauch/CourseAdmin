@@ -16,6 +16,7 @@ public class HomeController : Controller
         _context = context;
     }
 
+    [HttpGet("")]
     public IActionResult Index()
     {
         ViewAdminPanel viewModel = new()
