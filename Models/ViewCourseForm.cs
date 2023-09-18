@@ -33,13 +33,13 @@ public class SubjectExistsAttribute : ValidationAttribute
     
     	// This will connect us to our database since we are not in our Controller
         SchoolContext _context = (SchoolContext)validationContext.GetService(typeof(SchoolContext));
-        // Check to see if there are any records of this email in our database
+        // Check to see if there are any records of this SubjectId in our db
     	if(!_context.Subjects.Any(e => e.SubjectId == (int)value))
         {
-    	    // If yes, throw an error
+    	    // If not, throw an error
             return new ValidationResult("Subject must exist in database");
         } else {
-    	    // If no, proceed
+    	    // If yes, proceed
             return ValidationResult.Success;
         }
     }

@@ -10,13 +10,14 @@
             <h2 class="mt-5">Students</h2>
             @*_StudentTable partial uses ViewStudentTable as ViewModel, needs AllStudents and AllCourses from our ViewAdminPanel Model*@
             @await Html.PartialAsync("_StudentTable",new ViewStudentTable(){AllStudents=Model.AllStudents,AllCourses=Model.AllCourses})
+
             <h2 class="mt-5">New Student</h2>
             @*_NewStudentForm just needs an empty Student object for the form*@
             @await Html.PartialAsync("_NewStudentForm",new Student())
+
             <h2 class="mt-5">Student Details</h2>
             @*Here we look into session and attempt to isolate the selected student. 
-            This will be null if SelectedStudent is not set
-            *@
+            This will be null if SelectedStudent is not set*@
             @{Student? selected = Model.AllStudents.FirstOrDefault(s=>s.StudentId == Context.Session.GetInt32("SelectedStudent"));}
             @*Student detail gets either a null or a student*@
             @await Html.PartialAsync("_StudentDetail",selected)
