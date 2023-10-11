@@ -21,7 +21,7 @@ public class HomeController : Controller
     {
         ViewAdminPanel viewModel = new()
         {
-            AllCourses = _context.Courses.Include(c => c.StudentEnrollments).ToList(),
+            AllCourses = _context.Courses.Include(c => c.StudentEnrollments).ThenInclude(e=>e.EnrolledStudent).ToList(),
             AllStudents = _context.Students.Include(s => s.CourseEnrollments).ThenInclude(e => e.CourseEnrolled).ToList(),
             AllSubjects = _context.Subjects.ToList()
         };
