@@ -33,3 +33,8 @@ C:\stacks\CSharp\CourseAdmin\obj\Debug\net6.0\refint\CourseAdmin.dll
 C:\stacks\CSharp\CourseAdmin\obj\Debug\net6.0\CourseAdmin.pdb
 C:\stacks\CSharp\CourseAdmin\obj\Debug\net6.0\CourseAdmin.genruntimeconfig.cache
 C:\stacks\CSharp\CourseAdmin\obj\Debug\net6.0\ref\CourseAdmin.dll
+C:\stacks\CSharp\CourseAdmin\obj\Debug\net6.0\staticwebassets\msbuild.CourseAdmin.Microsoft.AspNetCore.StaticWebAssets.props
+C:\stacks\CSharp\CourseAdmin\obj\Debug\net6.0\staticwebassets\msbuild.build.CourseAdmin.props
+C:\stacks\CSharp\CourseAdmin\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.CourseAdmin.props
+C:\stacks\CSharp\CourseAdmin\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.CourseAdmin.props
+C:\stacks\CSharp\CourseAdmin\obj\Debug\net6.0\staticwebassets.pack.json

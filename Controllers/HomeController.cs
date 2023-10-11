@@ -75,6 +75,7 @@ public class HomeController : Controller
     }
 
     //gets courseID from form, toggles
+    //used in _StudentTable
     [HttpPost("enrollments/{studentID}")]
     public IActionResult ToggleEnroll(int studentID, int courseID)
     {
@@ -93,6 +94,7 @@ public class HomeController : Controller
     }
 
     //gets courseID from route, only drops
+    //used in _StudentDetail
     [HttpPost("enrollments/{studentID}/{courseID}/drop")]
     public RedirectToActionResult DropEnroll(int studentID, int courseID)
     {
@@ -106,6 +108,7 @@ public class HomeController : Controller
     }
 
     //gets courseID from route, only adds
+    //unused
     [HttpPost("enrollments/{studentID}/{courseID}/add")]
     public RedirectToActionResult AddEnroll(int studentID, int courseID)
     {
