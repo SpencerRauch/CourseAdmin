@@ -27,7 +27,6 @@ C:\stacks\CSharp\CourseAdmin\obj\Debug\net6.0\staticwebassets.development.json
 C:\stacks\CSharp\CourseAdmin\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\stacks\CSharp\CourseAdmin\obj\Debug\net6.0\scopedcss\bundle\CourseAdmin.styles.css
 C:\stacks\CSharp\CourseAdmin\obj\Debug\net6.0\scopedcss\projectbundle\CourseAdmin.bundle.scp.css
-C:\stacks\CSharp\CourseAdmin\obj\Debug\net6.0\CourseAdmin.csproj.CopyComplete
 C:\stacks\CSharp\CourseAdmin\obj\Debug\net6.0\CourseAdmin.dll
 C:\stacks\CSharp\CourseAdmin\obj\Debug\net6.0\refint\CourseAdmin.dll
 C:\stacks\CSharp\CourseAdmin\obj\Debug\net6.0\CourseAdmin.pdb
@@ -38,3 +37,5 @@ C:\stacks\CSharp\CourseAdmin\obj\Debug\net6.0\staticwebassets\msbuild.build.Cour
 C:\stacks\CSharp\CourseAdmin\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.CourseAdmin.props
 C:\stacks\CSharp\CourseAdmin\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.CourseAdmin.props
 C:\stacks\CSharp\CourseAdmin\obj\Debug\net6.0\staticwebassets.pack.json
+C:\stacks\CSharp\CourseAdmin\obj\Debug\net6.0\CourseAdmin.sourcelink.json
+C:\stacks\CSharp\CourseAdmin\obj\Debug\net6.0\CourseAd.C011042F.Up2Date

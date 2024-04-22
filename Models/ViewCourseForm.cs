@@ -12,8 +12,8 @@ public class ViewCourseForm
 {
     [SubjectExists]
     public int SubjectId { get;set; }
-    //make sure this is nullable, we don't want to validate it
-    public List<Subject>? AllSubjects { get;set; }
+    //make sure this is defaulted, we don't want to validate it
+    public List<Subject>? AllSubjects { get;set; } = new();
 
 }
 
