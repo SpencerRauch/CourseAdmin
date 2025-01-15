@@ -6,7 +6,7 @@
 <h1 class="display-4 border-bottom">Course Admin Panel</h1>
 <div class="text-center">
     <div class="row">
-        <div class="col-7">
+        <div class="col-md-7">
             <h2 class="mt-5">Students</h2>
             @*_StudentTable partial uses ViewStudentTable as ViewModel, needs AllStudents and AllCourses from our ViewAdminPanel Model*@
             @await Html.PartialAsync("_StudentTable",new ViewStudentTable(){AllStudents=Model.AllStudents,AllCourses=Model.AllCourses})
@@ -22,7 +22,7 @@
             @*Student detail gets either a null or a student*@
             @await Html.PartialAsync("_StudentDetail",selected)
         </div>
-        <div class="col-5">
+        <div class="col-md-5">
             @*implicitly passing the entire ViewAdminPanel view model into _CourseColumn partial*@
             @await Html.PartialAsync("_CourseColumn")
         </div>
