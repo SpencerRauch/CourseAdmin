@@ -1,0 +1,48 @@
+@model ViewAdminPanel;
+
+@{
+    Course? SelectedCourse = Model.AllCourses.FirstOrDefault(c => c.CourseId ==
+        Context.Session.GetInt32("SelectedCourse"));
+}
+
+@if (SelectedCourse == null)
+{
+    <h2 class="mt-5">Courses</h2>
+    @await Html.PartialAsync("_CourseTable",Model.AllCourses)
+    <h2 class="mt-5">Create Course</h2>
+    @await Html.PartialAsync("_NewCourseForm",new ViewCourseForm(){AllSubjects=Model.AllSubjects})
+    <h2 class="mt-5">New Subject</h2>
+    @await Html.PartialAsync("_NewSubjectForm",new Subject())
+}
+else
+{
+    <h2 class="mt-5">Course @SelectedCourse.CourseId - @SelectedCourse.Subject.SubjectName</h2>
+    <form asp-action="ClearCourseSelection" asp-controller="Home" method="Post">
+        <button class="btn btn-link">All Courses</button>
+    </form>
+    @if (SelectedCourse.StudentEnrollments.Count == 0)
+    {
+        <p>No enrollments</p>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Student ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Enrollment e in SelectedCourse.StudentEnrollments)
+                {
+                <tr>
+                    <td>@e.EnrolledStudent.Name</td>
+                    <td>@e.EnrolledStudent.StudentId</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+
+    }
+}

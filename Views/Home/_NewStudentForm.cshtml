@@ -1,0 +1,11 @@
+@model Student
+
+<form asp-action="CreateStudent" 
+    asp-controller="Home" 
+    method="Post" 
+    class="d-flex align-items-center gap-3 justify-content-center">
+    <label asp-for="Name"></label>
+    <input asp-for="Name">
+    <span class="text-danger" asp-validation-for="Name"></span>
+    <button class="btn btn-primary">Submit</button>
+</form>

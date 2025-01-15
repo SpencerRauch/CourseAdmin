@@ -1,0 +1,69 @@
+@model ViewStudentTable
+<table class="table-striped table">
+    <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Enroll</th>
+            <th>Drop</th>
+            <th>Courses</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Student s in Model.AllStudents)
+        {
+            <tr>
+                @{
+                    List<Course> notEnrolled = Model.AllCourses.Where(c => c.StudentEnrollments.All(e => e.StudentId !=s.StudentId)).ToList();
+                }
+                <td>@s.StudentId</td>
+                <td>
+                    <form asp-action="SelectStudent" asp-controller="Home" asp-route-studentID="@s.StudentId" method="Post">
+                        <button class="btn btn-link">@s.Name</button>
+                    </form>
+                </td>
+                <td>
+                    @if(notEnrolled.Count == 0)
+                    {
+                        <span>In All Courses!</span>
+                    }
+                    else
+                    {
+
+                    <form asp-action="ToggleEnroll" asp-controller="Home" method="Post" asp-route-studentID="@s.StudentId">
+                        <select name="courseID">
+                            @foreach (Course c in notEnrolled)
+                            {
+                                <option value="@c.CourseId">@c.CourseId @c.Subject.SubjectName</option>
+                            }
+
+                        </select>
+                        <button class="btn btn-info">Enroll</button>
+                    </form>
+                    }
+                </td>
+                <td>
+                    @if(s.CourseEnrollments.Count == 0)
+                    {
+                        <span>No Courses To Drop</span>
+                    }
+                    else
+                    {
+
+                    <form asp-action="ToggleEnroll" asp-controller="Home" method="Post" asp-route-studentID="@s.StudentId">
+                        <select name="courseID">
+                            @foreach (Enrollment e in s.CourseEnrollments)
+                            {
+                                <option value="@e.CourseEnrolled.CourseId">@e.CourseEnrolled.CourseId @e.CourseEnrolled.Subject.SubjectName</option>
+                            }
+
+                        </select>
+                        <button class="btn btn-danger">Drop</button>
+                    </form>
+                    }
+                </td>
+                <td>@s.CourseEnrollments.Count</td>
+            </tr>
+        }
+    </tbody>
+</table>

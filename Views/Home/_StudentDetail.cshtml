@@ -1,0 +1,49 @@
+@model Student
+@*Model will be null if we haven't set a selection into session*@
+@if (Model == null)
+{
+    <p>Click a student to view details</p>
+}
+else
+{
+    <form asp-action="ClearStudentSelection" asp-controller="Home" method="Post">
+        <button class="btn btn-link">Reset Student Selection</button>
+    </form>
+    <h4>@Model.Name</h4>
+    @if(Model.CourseEnrollments.Count == 0)
+    {
+        <p>@Model.Name isn't signed up for anything</p>
+    }
+    else
+    {
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Course ID</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Enrollment e in Model.CourseEnrollments)
+            {
+                <tr>
+                    <td>@e.CourseEnrolled.Subject.SubjectName</td>
+                    <td>@e.CourseId</td>
+                    <td>
+                        <form 
+                            asp-action="DropEnroll" 
+                            asp-controller="Home" 
+                            asp-route-studentID="@Model.StudentId"
+                            asp-route-courseID="@e.CourseId"
+                            method="Post">
+                            <button class="btn btn-danger">Drop</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    }
+}
